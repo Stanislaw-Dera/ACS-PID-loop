@@ -1,0 +1,32 @@
+import random
+
+Kp, Ki, Kd = 2,2,2
+dt = 0.01
+I = 0.0
+theta_target = 0.0
+simulation_time = 10
+
+theta, omega = 10.0, 0.0  # initial state, based in reality, not influenced by any noise
+theta_read = theta + random.uniform(-0.1,0.1) # thetha, taking into account the imperfection of the reading device
+prev_error = theta_target - theta_read
+
+for i in range(int(simulation_time / dt)):
+    error = theta_target - theta_read
+
+    I += error * dt
+    D = (error - prev_error) / dt
+    u = Kp*error + Ki*I + Kd*D
+
+    u = max(-20, min(20, u))
+
+    # activating the actuators, changing the physically real rocket position
+    omega += u * dt
+    theta += omega * dt
+
+    # edit the values for the next iteration
+    theta_read = theta + random.uniform(-0.1,0.1)
+    prev_error = error
+
+    print(theta)
+
+    i+=1
