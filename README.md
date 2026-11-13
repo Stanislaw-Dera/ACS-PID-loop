@@ -6,7 +6,7 @@ Stabilizacja rakiety w pionie (θ = 0°) za pomocą regulatora PID. Rakieta star
 
 Wybrane nastawy: **Kp = 3, Ki = 0, Kd = 2**
 
-Nastawy dobrałem metodą prób, porównując przebiegi dla różnych wartości Kp, Ki i Kd. Ki wyłączyłem, ponieważ w tym modelu I powodowało wyłącznie większe rozjeżdżanie się wartości. Mniej więcej po 3,5 sekundy wartość θ zawierała się w ± 0.2°
+Nastawy dobrałem metodą prób, porównując przebiegi dla różnych wartości Kp, Ki i Kd. Ki wyłączyłem, ponieważ w tym modelu I powodowało wyłącznie większe rozjeżdżanie się wartości. Mniej więcej po 3,5 sekundy wartość θ zawiera się w ± 0.2°
 
 ![Wynik główny – θ(t) i u(t)](01_baseline.png)
 
